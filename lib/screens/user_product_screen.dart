@@ -33,8 +33,11 @@ class UserProductScreen extends StatelessWidget {
             itemBuilder: (_, i) => Card(
                   elevation: 0,
                   margin: EdgeInsets.symmetric(vertical: 5),
-                  child: UserProductItem(productdata.items[i].imageUrl,
-                      productdata.items[i].title),
+                  child: UserProductItem(
+                    productdata.items[i].id,
+                    productdata.items[i].imageUrl,
+                    productdata.items[i].title,
+                  ),
                 )),
       ),
     );
