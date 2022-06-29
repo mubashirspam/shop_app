@@ -17,7 +17,7 @@ class _EditproductScreenState extends State<EditproductScreen> {
   final _imageUrlFocusNode = FocusNode();
   final _form = GlobalKey<FormState>();
   var _editProduct = Product(
-    id: null.toString(),
+    id: '',
     title: '',
     description: '',
     price: 0,
@@ -43,9 +43,9 @@ class _EditproductScreenState extends State<EditproductScreen> {
   @override
   void didChangeDependencies() {
     // for edit product
-   
+
     if (_isInit) {
-       final productId = ModalRoute.of(context)?.settings.arguments as String;
+      final  productId = ModalRoute.of(context)?.settings.arguments as String;
       if (productId != '') {
         _editProduct =
             Provider.of<Products>(context, listen: false).findById(productId);
@@ -101,8 +101,9 @@ class _EditproductScreenState extends State<EditproductScreen> {
       // for update existing product data
     } else {
       Provider.of<Products>(context, listen: false).addProduct(_editProduct);
-      Navigator.of(context).pop();
+     
     }
+     Navigator.of(context).pop();
   }
 
   @override

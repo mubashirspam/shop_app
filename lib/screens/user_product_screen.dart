@@ -38,7 +38,8 @@ class UserProductScreen extends StatelessWidget {
                     productdata.items[i].imageUrl,
                     productdata.items[i].title,
                   ),
-                )),
+                ),
+                ),
       ),
     );
   }
